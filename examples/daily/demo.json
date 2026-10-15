@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "seed": 101,
+  "symbols": 20,
+  "sessions": 40,
+  "bars": 40,
+  "frequency": "1d",
+  "factors": 2,
+  "note": "Not real HSI constituents or market performance"
+}
