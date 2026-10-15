@@ -1,0 +1,46 @@
+[package]
+name = "hkfactor"
+version = "0.1.0"
+edition = "2021"
+description = "Streaming Hong Kong index enhancement factor research (Rust port)"
+license = "MIT"
+
+[[bin]]
+name = "hkfactor"
+path = "src/main.rs"
+
+[dependencies]
+arrow = { version = "60", default-features = false, features = ["prettyprint", "chrono-tz"] }
+parquet = { version = "60", default-features = false, features = ["arrow", "zstd", "snap", "lz4", "flate2", "flate2-rust_backend", "brotli"] }
+chrono = "0.4"
+chrono-tz = "0.10"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
+toml = "0.8"
+sha2 = "0.10"
+hex = "0.4"
+clap = { version = "4", features = ["derive"] }
+csv = "1"
+encoding_rs = "0.8"
+memmap2 = "0.9"
+plotters = { version = "0.3", default-features = false, features = ["bitmap_backend", "bitmap_encoder", "line_series", "ab_glyph", "point_series"] }
+anyhow = "1"
+thiserror = "2"
+tempfile = "3"
+log = "0.4"
+env_logger = "0.11"
+urlencoding = "2"
+libc = "0.2"
+
+[build-dependencies]
+sha2 = "0.10"
+hex = "0.4"
+
+[dev-dependencies]
+tempfile = "3"
+sha2 = "0.10"
+hex = "0.4"
+
+[profile.release]
+opt-level = 3
+debug = false
